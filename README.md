@@ -1,7 +1,8 @@
 1. gradeKeeperFront -
-----------------------
 npm install
 ionic serve
+
+----------------------
 
 2. gradeKepperAPI/server.js 
 npm install
