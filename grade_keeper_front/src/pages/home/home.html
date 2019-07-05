@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color:lightblue">
+    <div class="card" style="margin:auto; text-align:center; border-bottom:1px solid black; border:double; padding:10px; background-color:white;">
+        <div class="card-body">
+          <h5 class="card-title">Teacher View</h5>
+          <p class="card-text">Listed below are your students. Click on a user to add an assignment</p>
+        </div>
+      </div>
+  <div class="container mainDiv" style="margin-top:10px; background-color:white;">
+    <h1>Your Students:</h1>
+
+  <div *ngFor="let student of studentArray" (click)="itemTapped($event, student)" style="border-bottom:1px solid black; padding:10px; box-shadow: 5px black; margin: 10px;">
+    <ion-col>
+        <h1>{{student.studentLast}}, {{student.studentFirst}}</h1>
+    </ion-col>
+    <h3>Student ID: {{student.studentId}}</h3>
+  </div>
+  </div>
+</ion-content>

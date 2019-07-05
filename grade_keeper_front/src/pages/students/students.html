@@ -1,0 +1,44 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>students</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="border:1px solid black; padding:10px;">
+    <h3> You are now viewing all grades for: <span style="color:blue">{{last}}, {{first}}</span>
+    </h3>
+    <button ion-button (click)="onButtonClick()">Click me to add a grade</button>
+    <div *ngIf="buttonClicked">
+        <form [formGroup]="formVar" (ngSubmit)="createProduct()">
+            <ion-list>
+        
+                <ion-item>
+                    <ion-label fixed>Assignment:</ion-label>
+                    <ion-input type="text" formControlName="assignmentname"></ion-input>
+                </ion-item>
+        
+                <ion-item>
+                    <ion-label fixed>Grade</ion-label>
+                    <ion-input type="number" formControlName="grade"></ion-input>
+                </ion-item>    
+        
+        
+                <button ion-button color="secondary" type="submit" full>Submit Grade</button>
+        
+            </ion-list>
+        </form>
+    </div>
+  </div>
+  <div style="border-bottom:1px solid black; padding:5px; margin:10px;" *ngFor="let student of studentArray">
+    <ion-row>
+      <h3>Assignment: {{student.assignmentname}}</h3>
+      <ion-col style="text-align: right;">
+        Grade: {{student.grade}}
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+</ion-content>
