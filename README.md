@@ -1,12 +1,10 @@
 1. gradeKeeperFront -
 npm install
-ionic serve
 
 ----------------------
 
 2. gradeKepperAPI/server.js 
 npm install
-node server
 
 might need enable cross origin resource sharing
 
